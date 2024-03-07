@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GOKAME | Tech & Web Solutions North Georgia</title>
+    <style>
+      :root {
+        --primary: #004a99;
+        --accent: #e67e22;
+        --light: #f4f7f6;
+        --dark: #333;
+      }
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        margin: 0;
+        padding: 0;
+        background-color: #fff;
+      }
+      /* Top Navigation Bar */
+      nav {
+        background: #fff;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+      }
+      .logo {
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: var(--primary);
+      }
+      header {
+        background: var(--primary);
+        color: white;
+        padding: 3rem 1rem;
+        text-align: center;
+      }
+      /* Header Image Styling */
+      .header-img {
+        width: 100%;
+        max-width: 600px; /* Adjust size as needed */
+        height: auto;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+      .tagline {
+        font-size: 1.4rem;
+        font-weight: 300;
+        margin: 10px 0 20px;
+        color: #d1e3ff;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .mission {
+        background: var(--light);
+        padding: 30px;
+        border-radius: 12px;
+        margin: -50px auto 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-top: 5px solid var(--accent);
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+      .card {
+        border: 1px solid #eee;
+        padding: 25px;
+        border-radius: 10px;
+        transition: transform 0.2s;
+        background: white;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+      }
+      .card h3 {
+        color: var(--primary);
+        margin-top: 0;
+        border-bottom: 2px solid var(--light);
+        padding-bottom: 10px;
+      }
+      .area-tag {
+        background: var(--dark);
+        color: white;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .contact-box {
+        text-align: center;
+        padding: 50px 20px;
+        background: #002d5e;
+        color: white;
+        border-radius: 10px;
+        margin-top: 30px;
+      }
+      .btn {
+        background: var(--accent);
+        color: white;
+        padding: 15px 35px;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: inline-block;
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        font-size: 0.85rem;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">Gokame Tech</div>
+    </nav>
+
+    <header>
+      <img
+        src="gokameMoTech2.jpg"
+        alt="GOKAME Tech Support"
+        class="header-img"
+      />
+
+      <h1>G.O.K.A.M.E.</h1>
+      <div class="tagline">Tech solved. Life simplified.</div>
+      <a href="#contact" class="btn">Get Started</a>
+    </header>
+
+    <div class="container">
+      <section class="mission">
+        <h2>Georgia On-site Knowledge, Automation, & Multimedia Experts</h2>
+        <p>
+          If it involves technology—from your living room home theater to your
+          corporate network—we make it work perfectly. We are committed to
+          delivering top-tier computer repair, smart integration, and commercial
+          IT with the local reliability our community deserves.
+        </p>
+      </section>
+
+      <div class="services-grid">
+        <div class="card">
+          <h3>🏠 Smart Home & Multimedia</h3>
+          <p>
+            Expert setup for home theaters, smart doorbells, security cameras,
+            and Wi-Fi optimization. We turn your house into a fully automated
+            home.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🌐 Web Building & Editing</h3>
+          <p>
+            Need a professional website or an update to your current one? We
+            build fast, mobile-friendly sites and provide ongoing editing
+            services to keep your business current.
+          </p>
+        </div>
+        <div class="card">
+          <h3>💻 Computer & IT Repair</h3>
+          <p>
+            Virus removal, hardware upgrades, and performance tuning for PC/Mac.
+            On-site support for homes and small businesses in North GA.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🏢 Commercial Services</h3>
+          <p>
+            Reliable networking, POS system maintenance, and cloud backup
+            solutions designed to keep your business running without downtime.
+          </p>
+        </div>
+      </div>
+
+      <div id="contact" class="contact-box">
+        <h2>Ready to simplify your tech?</h2>
+        <p>Call or text us today for an on-site consultation.</p>
+        <p style="font-size: 1.8rem; font-weight: bold">
+          <a href="tel:4702720054" style="color: white; text-decoration: none"
+            >(470) 272-0054</a
+          >
+        </p>
+        <p>Email: gokameman@gmail.com</p>
+      </div>
+
+      <div class="area-tag">
+        <h3>📍 Proudly Serving areas in North Georgia</h3>
+        <p>
+          Jefferson | Buford | Braselton | Hoschton | Commerce | Athens |
+          Gainesville | Maysville | Winder | Auburn | Flowery Branch | Oakwood |
+          Baldwin | Lula | Clermont | Helen | Cleveland | Dahlonega | Cornelia |
+          Toccoa | Lavonia
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025 Georgia On-site Knowledge, Automation, & Multimedia Experts.
+        <br />
+        Jackson County's Premier Local Tech Partner.
+      </p>
+    </footer>
+  </body>
+</html>
