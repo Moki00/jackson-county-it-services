@@ -1,10 +1,11 @@
 /* 1. GLOBAL VARIABLES & RESET */
 :root {
-  --primary: #006b24; /* GOKAME Green */
-  --secondary: #00c3ff; /* water blue */
+  --green: #006b24; /* GOKAME Green */
+  --blue: #00c3ff; /* water blue */
   --accent: #e67e22; /* orange */
   --light: #f4f7f6; /* off-white */
-  --dark: #333; /* dark gray */
+  --dark: #222; /* dark grey */
+  --grey: #444; /* medium grey */
   --legal-green: lightgreen; /* for legal pages "Matrix" theme */
 }
 
@@ -103,7 +104,7 @@ a:hover {
   left: 0;
   width: 75%;
   background: rgba(51, 51, 51, 0.98);
-  border: 2px solid var(--primary);
+  border: 2px solid var(--green);
   border-top: none; /* Keep flush with the bar */
   border-bottom-right-radius: 8px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -119,7 +120,7 @@ a:hover {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
-  color: var(--primary);
+  color: var(--green);
 }
 
 .logo a {
@@ -164,6 +165,7 @@ header h1 {
 
 .mission {
   background: var(--light);
+  color: var(--dark);
   padding: 30px;
   border-radius: 12px;
   margin: -60px auto 40px;
@@ -199,17 +201,6 @@ header h1 {
   box-sizing: border-box;
 }
 
-.submit-btn {
-  background: var(--accent);
-  color: white;
-  padding: 15px 35px;
-  border-radius: 50px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
 .contact-box {
   text-align: center;
   padding: 20px 20px;
@@ -220,7 +211,7 @@ header h1 {
   margin-bottom: 30px;
 }
 
-/* 4. Services  */
+/* ------ Services ------- */
 .service-row {
   display: flex;
   flex-direction: column;
@@ -249,7 +240,7 @@ header h1 {
 }
 
 .service-card h3 {
-  color: var(--primary);
+  color: var(--green);
   font-size: 1.8rem;
   margin-bottom: 15px;
 }
@@ -260,6 +251,11 @@ header h1 {
   background-size: cover;
   background-position: center;
   order: 1;
+  transition: transform 0.5s ease;
+}
+
+.service-row:hover .service-image {
+  transform: scale(1.1);
 }
 
 /* Card Divider */
@@ -272,7 +268,7 @@ header h1 {
 
 /* Service Images */
 .service-ai {
-  background-image: url("/assets/dataCenter.jpg"); /* You can swap this for an AI image later */
+  background-image: url("/assets/ai.jpg"); /* You can swap this for an AI image later */
 }
 
 .service-multimedia {
@@ -289,25 +285,33 @@ header h1 {
 
 .service-commercial {
   background-image: url("/assets/dataCenter.jpg");
+  background-position: center top;
 }
 
 /* 5. COMPONENTS (Buttons, Tags) */
-.btn-wrapper {
-  margin-top: 40px;
+.button-container {
+  max-width: 250px; /* Limits the width of any button inside it */
+  margin: 20px auto; /* Centers the container and adds vertical space */
 }
+
 .btn {
-  background: var(--accent); /* Your orange color */
-  color: white !important; /* Forces the text to stay white */
+  background: var(--accent);
+  color: white !important;
   padding: 15px 35px;
   border-radius: 50px;
   font-weight: bold;
-  display: inline-block;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
   text-decoration: none;
   font-size: 1.1rem;
   transition: transform 0.2s, background-color 0.2s;
+  border: none;
+  cursor: pointer;
 }
 .btn:hover {
-  background-color: var(--secondary);
+  background-color: var(--green);
   transform: scale(1.05);
   color: white !important;
 }
@@ -326,7 +330,7 @@ footer {
   padding: 30px;
   font-size: 1rem;
   color: var(--light);
-  background-color: var(--primary);
+  background-color: var(--green);
   width: auto;
 }
 
@@ -335,7 +339,7 @@ footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--primary);
+  background-color: var(--green);
   color: white;
   width: 45px;
   height: 45px;
@@ -363,7 +367,31 @@ footer {
   transform: scale(1.1);
 }
 
-/* 6. Other Pages ("Matrix" Theme) */
+/* --- Matrix Theme for Sub-pages --- */
+.matrix-theme {
+  background-color: black;
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-top: 20px; /* Adds space below the navbar */
+}
+
+.matrix-theme,
+.matrix-theme .mission,
+.matrix-theme h1,
+.matrix-theme h2,
+.matrix-theme p {
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.matrix-theme h1,
+.matrix-theme h2,
+.matrix-theme h3,
+.matrix-theme a:not(.btn) {
+  color: var(--legal-green); /* Keeps GOKAME Matrix green links */
+}
+
 .thank-you-container {
   text-align: center;
   margin-top: 0;
@@ -396,6 +424,26 @@ footer {
   border-bottom: 2px solid #333;
 }
 
+/* --- Referrals Page Styling --- */
+.legal-body .mission {
+  color: var(
+    --dark
+  ); /* Makes the text readable inside the white mission boxes */
+  text-align: left;
+}
+
+.legal-body .mission h3 {
+  margin-top: 0;
+  color: var(--green);
+}
+
+.legal-body .mission small {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--accent);
+}
+
 .footer-link-legal {
   margin-top: 40px;
   display: block;
@@ -403,9 +451,34 @@ footer {
   width: 100%;
 }
 
+/* About style */
+
+.intro-row {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 10px;
+  background-color: var(--dark);
+  border: 1px solid var(--grey);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.intro-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  order: 2;
+  background: var(--dark);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-top: 5px solid var(--green);
+}
+
 /* --- Responsive Styles --- */
-/* --- Desktop View --- */
-/* Adjust layout for larger screens */
+/* --- for larger screens */
+/* --- Desktop  --- */
 @media (min-width: 888px) {
   body {
     padding-top: 0;
@@ -413,17 +486,19 @@ footer {
   }
 
   .main-nav {
+    width: 200px;
+    box-sizing: border-box;
+    overflow-x: hidden;
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 40px;
     background: var(--dark);
-    border-right: 1px solid #444;
+    border-right: 1px solid var(--grey);
     border-bottom: none;
   }
 
@@ -451,15 +526,24 @@ footer {
     opacity: 1 !important;
     border: none !important;
     box-shadow: none !important;
-    margin-top: 50px;
+    margin-top: 20px;
   }
 
   .nav-links li a {
     text-align: left;
-    padding: 15px 30px;
-    width: 50%;
+    padding: 12px 20px;
+    width: 100%;
     display: block;
-    border-bottom: 1px solid #444;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--grey);
+    word-wrap: break-word;
+    font-size: 0.95rem;
+  }
+
+  .nav-links li a:hover {
+    padding-left: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent);
   }
 
   .service-row {
@@ -480,7 +564,9 @@ footer {
   .service-card {
     order: 0 !important; /* Resets the mobile 'order: 1' and 'order: 2' */
     padding: 40px;
-    background: var(--light);
+    background-color: var(--light) !important; /* Prevents see-through text */
+    position: relative;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -492,5 +578,40 @@ footer {
   }
   .service-row:nth-child(even) .service-card {
     direction: ltr;
+  }
+
+  .intro-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 0;
+    margin-top: 40px;
+    direction: rtl;
+    margin-bottom: 20px;
+    background-color: var(--dark);
+    border: 1px solid var(--grey);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: left;
+  }
+
+  .intro-card {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    direction: ltr !important;
+    order: 1;
+    background: transparent;
+    color: white;
+  }
+
+  .intro-row .service-image {
+    height: 100%;
+    min-height: 450px;
+    width: 100%;
+    order: 2; /* Keeps image on the right */
+    background-size: cover;
+    background-position: center;
   }
 }
