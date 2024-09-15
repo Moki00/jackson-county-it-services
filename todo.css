@@ -1,29 +1,36 @@
-/* Card Divider */
-.card-divider {
-  border: none;
-  height: 1px;
-  background: #eee;
-  margin-bottom: 20px;
-}
+@media (min-width: 888px) {
+  /* ... keep your body and main-nav sidebar styles ... */
 
-/* Service Image Assignments */
-.service-ai {
-  background-image: url("/assets/dataCenter.jpg"); /* You can swap this for an AI image later */
-}
+  .service-row {
+    display: grid !important;
+    /* This creates two distinct columns so they cannot overlap */
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 30px;
+    background-color: var(--light);
+    direction: ltr;
+  }
 
-.service-multimedia {
-  background-image: url("/assets/tvWall.jpg");
-}
+  .service-image {
+    min-height: 400px;
+    width: 100%;
+    order: 0 !important;
+    display: block; /* Ensures the image container is fully rendered */
+  }
 
-.service-web {
-  background-image: url("/assets/website.jpg");
-}
+  .service-card {
+    padding: 40px; /* Added more padding for a professional feel */
+    order: 0 !important;
+    background: var(--light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-.service-repair {
-  background-image: url("/assets/turtlePc.jpg");
-}
-
-.service-commercial {
-  background-image: url("/assets/dataCenter.jpg");
-  background-position: top;
+  /* Zig-Zag Logic */
+  .service-row:nth-child(even) {
+    direction: rtl;
+  }
+  .service-row:nth-child(even) .service-card {
+    direction: ltr;
+  }
 }

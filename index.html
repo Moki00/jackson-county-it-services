@@ -48,6 +48,7 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#contact">Contact</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#areas">Area</a></li>
         <li><a href="pages/privacy-policy.html">Privacy</a></li>
         <li><a href="pages/terms-of-service.html">ToS</a></li>
       </ul>
@@ -93,11 +94,16 @@
           <div class="form-group">
             <label for="service">Service Needed</label>
             <select id="service" name="service">
+              <option value="pick-one">Pick One:</option>
               <option value="ai-automation">AI & Automation Support</option>
+              <option value="commercial">
+                Commercial Services / MSP Request
+              </option>
+              <option value="computer-repair">
+                Computer Repair / Tech Support
+              </option>
               <option value="smart-home">Smart Home / Multimedia</option>
               <option value="website-build">Website Building / Editing</option>
-              <option value="computer-repair">Computer / IT Repair</option>
-              <option value="commercial">Commercial Services</option>
               <option value="other">Other: Describe Below</option>
             </select>
           </div>
@@ -111,21 +117,8 @@
         </form>
       </div>
 
-      <!-- Services: AI & Automation -->
+      <!-- Services -->
       <div class="service-row" id="services">
-        <div class="service-card">
-          <h3>🤖 AI & Automation</h3>
-          <hr class="card-divider" />
-          <p>
-            Leverage the power of AI to streamline your business or home office.
-            We specialize in workflow automation, custom AI integrations, and
-            productivity tools that save you time and reduce manual effort.
-          </p>
-        </div>
-        <div class="service-image service-ai"></div>
-      </div>
-
-      <div class="service-row">
         <div class="service-card">
           <h3>🏠 Smart Home & Multimedia</h3>
           <hr class="card-divider" />
@@ -141,6 +134,7 @@
       <div class="service-row">
         <div class="service-card">
           <h3>🌐 Website Building & Editing</h3>
+          <hr class="card-divider" />
           <p>
             <strong
               >Professional web presence for North Georgia small
@@ -156,6 +150,7 @@
       <div class="service-row">
         <div class="service-card">
           <h3>💻 Computer & IT Repair</h3>
+          <hr class="card-divider" />
           <p>
             Virus removal, hardware upgrades, and performance tuning for PC/Mac.
             On-site support for homes and small businesses in North GA.
@@ -167,6 +162,7 @@
       <div class="service-row">
         <div class="service-card">
           <h3>🏢 Commercial Services</h3>
+          <hr class="card-divider" />
           <p>
             Reliable networking, POS system maintenance, and cloud backup
             solutions designed to keep your business running without downtime.
@@ -175,7 +171,21 @@
         <div class="service-image service-commercial"></div>
       </div>
 
-      <div class="area-tag">
+      <div class="service-row">
+        <div class="service-card">
+          <h3>🤖 AI & Automation</h3>
+          <hr class="card-divider" />
+          <p>
+            Leverage the power of AI to streamline your business or home office.
+            We specialize in workflow automation, custom AI integrations, and
+            productivity tools that save you time and reduce manual effort.
+          </p>
+        </div>
+        <div class="service-image service-ai"></div>
+      </div>
+
+      <!-- Areas served -->
+      <div class="area-tag" id="areas">
         <h3>📍 Proudly Serving Onsite Technical Support in North Georgia:</h3>
         <p>
           Jefferson | Buford | Braselton | Hoschton | Commerce | Athens |
@@ -186,8 +196,8 @@
       </div>
     </div>
 
-    <!-- Contact Form -->
-    <section class="contact_section layout_padding">
+    <!-- Areas served -->
+    <section class="layout_padding">
       <div class="container">
         <div class="heading_container">
           <h2>Local Onsite Support:</h2>
