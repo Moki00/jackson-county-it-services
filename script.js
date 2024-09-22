@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Handle Contact Form Submission
+  // Contact Form Submission
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     contactForm.addEventListener("submit", function (event) {
@@ -22,19 +22,28 @@ document.addEventListener("DOMContentLoaded", function () {
       const btn = this.querySelector("button");
       btn.innerText = "Sending...";
 
+      // Get the selected service text for the subject line
+      const serviceSelect = document.getElementById("service");
+      const serviceName =
+        serviceSelect.options[serviceSelect.selectedIndex].text;
+
       // Send via EmailJS
-      emailjs.sendForm("service_qzqzp2b", "template_8kporjp", this).then(
-        () => {
-          alert("Message Sent Successfully!");
-          btn.innerText = "Send Message";
-          this.reset();
-        },
-        (error) => {
-          alert("FAILED to send message. Please try again.");
-          console.log("FAILED...", error);
-          btn.innerText = "Send Message";
-        }
-      );
+      emailjs
+        .sendForm("service_qzqzp2b", "template_8kporjp", this, {
+          service_subject: `New Quote Request: ${serviceName}`,
+        })
+        .then(
+          () => {
+            alert("Message Sent! We will get back to you shortly.");
+            btn.innerText = "Send Message";
+            this.reset();
+          },
+          (error) => {
+            alert("Something went wrong. Please call us instead.");
+            console.log("FAILED...", error);
+            btn.innerText = "Send Message";
+          }
+        );
     });
   }
 });
@@ -49,3 +58,22 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
   }
 }
+
+/* 4. BACK TO TOP BUTTON LOGIC */
+const backToTopBtn = document.getElementById("backToTop");
+
+window.addEventListener("scroll", function () {
+  // Show the button when the user scrolls down 300px
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", // Creates that nice scrolling animation
+  });
+});

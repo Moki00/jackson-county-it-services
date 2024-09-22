@@ -28,8 +28,8 @@ a {
 }
 
 a:hover {
-  text-decoration: none; /* Keeps the logo clean without an underline */
-  color: #fff; /* brightens the text during the glow */
+  text-decoration: none; /* Clean: No underline */
+  color: #fff; /* brightens the text during glow */
   text-shadow: 0 0 10px rgba(0, 74, 153, 0.8), 0 0 20px rgba(0, 74, 153, 0.4);
   transform: scale(1.07); /* Makes the logo grow */
 }
@@ -173,6 +173,53 @@ header h1 {
   border-top: 5px solid var(--accent);
 }
 
+/* Contact Section */
+#contact-form {
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  background: var(--accent);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.contact-box {
+  text-align: center;
+  padding: 20px 20px;
+  background: #002d5e;
+  color: white;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 /* 4. SERVICES (ALTERNATING LAYOUT) */
 .service-row {
   display: grid;
@@ -214,17 +261,37 @@ header h1 {
   background-position: center;
 }
 
-/* 5. COMPONENTS (BUTTONS, CONTACT) */
-.contact-box {
-  text-align: center;
-  padding: 20px 20px;
-  background: #002d5e;
-  color: white;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 30px;
+/* Card Divider */
+.card-divider {
+  border: none;
+  height: 1px;
+  background: #eee;
+  margin-bottom: 20px;
 }
 
+/* Service Image Assignments */
+.service-ai {
+  background-image: url("/assets/dataCenter.jpg"); /* You can swap this for an AI image later */
+}
+
+.service-multimedia {
+  background-image: url("/assets/tvWall.jpg");
+}
+
+.service-web {
+  background-image: url("/assets/website.jpg");
+}
+
+.service-repair {
+  background-image: url("/assets/turtlePc.jpg");
+}
+
+.service-commercial {
+  background-image: url("/assets/dataCenter.jpg");
+  background-position: top;
+}
+
+/* 5. COMPONENTS (Buttons, Tags) */
 .btn {
   background: var(--accent);
   color: white;
@@ -249,6 +316,39 @@ footer {
   font-size: 0.85rem;
   color: var(--light);
   background-color: var(--primary);
+}
+
+/* --- Back to Top Button --- */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary); /* GOKAME Green */
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--accent); /* Orange on hover */
+  transform: scale(1.1);
 }
 
 /* 6. LEGAL PAGES STYLING (The "Matrix" Theme) */
@@ -344,7 +444,7 @@ footer {
   .nav-links li a {
     text-align: left;
     padding: 15px 30px;
-    width: 100%;
+    width: 50%;
     display: block;
     border-bottom: 1px solid #444;
   }

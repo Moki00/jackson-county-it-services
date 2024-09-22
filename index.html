@@ -79,60 +79,21 @@
           below:
         </p>
 
-        <form
-          id="contact-form"
-          style="max-width: 500px; margin: 30px auto; text-align: left"
-        >
-          <div style="margin-bottom: 15px">
-            <label for="user-name" style="display: block; margin-bottom: 5px"
-              >Your Name</label
-            >
-            <input
-              type="text"
-              id="user-name"
-              name="name"
-              required
-              style="
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-              "
-            />
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="user-name">Your Name</label>
+            <input type="text" id="user-name" name="name" required />
           </div>
 
-          <div style="margin-bottom: 15px">
-            <label for="user-email" style="display: block; margin-bottom: 5px"
-              >Email Address</label
-            >
-            <input
-              type="email"
-              id="user-email"
-              name="email"
-              required
-              style="
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-              "
-            />
+          <div class="form-group">
+            <label for="user-email">Email Address</label>
+            <input type="email" id="user-email" name="email" required />
           </div>
 
-          <div style="margin-bottom: 15px">
-            <label for="service" style="display: block; margin-bottom: 5px"
-              >Service Needed</label
-            >
-            <select
-              id="service"
-              name="service"
-              style="
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-              "
-            >
+          <div class="form-group">
+            <label for="service">Service Needed</label>
+            <select id="service" name="service">
+              <option value="ai-automation">AI & Automation Support</option>
               <option value="smart-home">Smart Home / Multimedia</option>
               <option value="website-build">Website Building / Editing</option>
               <option value="computer-repair">Computer / IT Repair</option>
@@ -141,58 +102,42 @@
             </select>
           </div>
 
-          <div style="margin-bottom: 20px">
-            <label for="message" style="display: block; margin-bottom: 5px"
-              >How can we help?</label
-            >
-            <textarea
-              name="message"
-              id="message"
-              rows="4"
-              style="
-                width: 100%;
-                padding: 10px;
-                border-radius: 5px;
-                border: none;
-              "
-            ></textarea>
+          <div class="form-group">
+            <label for="message">How can we help?</label>
+            <textarea name="message" id="message" rows="4"></textarea>
           </div>
 
-          <button
-            type="submit"
-            class="btn"
-            style="width: 100%; border: none; cursor: pointer"
-          >
-            Send Message
-          </button>
+          <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
 
-      <!-- Services: Smart Home & Multimedia -->
+      <!-- Services: AI & Automation -->
       <div class="service-row" id="services">
         <div class="service-card">
+          <h3>🤖 AI & Automation</h3>
+          <hr class="card-divider" />
+          <p>
+            Leverage the power of AI to streamline your business or home office.
+            We specialize in workflow automation, custom AI integrations, and
+            productivity tools that save you time and reduce manual effort.
+          </p>
+        </div>
+        <div class="service-image service-ai"></div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-card">
           <h3>🏠 Smart Home & Multimedia</h3>
-          <hr
-            style="
-              border: none;
-              height: 1px;
-              background: #eee;
-              margin-bottom: 20px;
-            "
-          />
+          <hr class="card-divider" />
           <p>
             Expert setup for home theaters, smart doorbells, security cameras,
             and Wi-Fi optimization. We turn your house into a fully automated
             home.
           </p>
         </div>
-        <div
-          class="service-image"
-          style="background-image: url(/assets/tvWall.jpg)"
-        ></div>
+        <div class="service-image service-multimedia"></div>
       </div>
 
-      <!-- Services: Website -->
       <div class="service-row">
         <div class="service-card">
           <h3>🌐 Website Building & Editing</h3>
@@ -201,19 +146,13 @@
               >Professional web presence for North Georgia small
               businesses.</strong
             >
-            We build fast, mobile-friendly sites that rank high in
-            <em>Google</em> searches so you get <em>local customers</em>.
-            Whether you need a brand-new launch or reliable monthly editing, we
-            keep your digital storefront current.
+            We build fast, mobile-friendly sites that rank high in Google
+            searches.
           </p>
         </div>
-        <div
-          class="service-image"
-          style="background-image: url(/assets/website.jpg)"
-        ></div>
+        <div class="service-image service-web"></div>
       </div>
 
-      <!-- Services: Computer & IT Repair -->
       <div class="service-row">
         <div class="service-card">
           <h3>💻 Computer & IT Repair</h3>
@@ -222,13 +161,9 @@
             On-site support for homes and small businesses in North GA.
           </p>
         </div>
-        <div
-          class="service-image"
-          style="background-image: url(/assets/turtlePc.jpg)"
-        ></div>
+        <div class="service-image service-repair"></div>
       </div>
 
-      <!-- Services: Commercial Services -->
       <div class="service-row">
         <div class="service-card">
           <h3>🏢 Commercial Services</h3>
@@ -237,13 +172,7 @@
             solutions designed to keep your business running without downtime.
           </p>
         </div>
-        <div
-          class="service-image"
-          style="
-            background-image: url(/assets/dataCenter.jpg);
-            background-position: top;
-          "
-        ></div>
+        <div class="service-image service-commercial"></div>
       </div>
 
       <div class="area-tag">

@@ -1,32 +1,29 @@
-/* --- Back to Top Button --- */
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--primary); /* GOKAME Green */
-  color: white;
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
+/* Card Divider */
+.card-divider {
   border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  opacity: 0; /* Hidden by default */
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
+  height: 1px;
+  background: #eee;
+  margin-bottom: 20px;
 }
 
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
+/* Service Image Assignments */
+.service-ai {
+  background-image: url("/assets/dataCenter.jpg"); /* You can swap this for an AI image later */
 }
 
-.back-to-top:hover {
-  background-color: var(--accent); /* Orange on hover */
-  transform: scale(1.1);
+.service-multimedia {
+  background-image: url("/assets/tvWall.jpg");
+}
+
+.service-web {
+  background-image: url("/assets/website.jpg");
+}
+
+.service-repair {
+  background-image: url("/assets/turtlePc.jpg");
+}
+
+.service-commercial {
+  background-image: url("/assets/dataCenter.jpg");
+  background-position: top;
 }
