@@ -1,11 +1,32 @@
-.nav-links {
-  /* ... existing code ... */
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
+/* --- Back to Top Button --- */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary); /* GOKAME Green */
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  opacity: 0; /* Hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s, transform 0.2s;
 }
 
-.nav-links.active {
-  /* ... existing code ... */
-  max-height: 300px; /* High enough to show all links */
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--accent); /* Orange on hover */
+  transform: scale(1.1);
 }

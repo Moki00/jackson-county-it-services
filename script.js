@@ -41,6 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* 3. MOBILE MENU TOGGLE */
 function toggleMenu() {
+  const nav = document.querySelector(".main-nav");
   const navLinks = document.getElementById("navLinks");
-  navLinks.classList.toggle("active");
+
+  if (nav && navLinks) {
+    nav.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  }
 }
