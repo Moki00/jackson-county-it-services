@@ -26,11 +26,16 @@
 
   <body>
     <nav class="main-nav">
-      <div class="nav-hamburger" onclick="toggleMenu()">
+      <button
+        class="nav-hamburger"
+        onclick="toggleMenu()"
+        aria-label="toggleMenu"
+        type="button"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
 
       <div class="logo">
         <a href="index.html">GOKAME</a>
@@ -44,8 +49,10 @@
         <li><a href="#contact">Contact</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="pages/privacy-policy.html">Privacy</a></li>
+        <li><a href="pages/terms-of-service.html">ToS</a></li>
       </ul>
     </nav>
+
     <header>
       <h1>GOKAME Tech Support</h1>
       <div class="tagline">Tech solved. Life simplified.</div>
@@ -68,7 +75,7 @@
       <div id="contact" class="contact-box">
         <h2>Ready to simplify your tech?</h2>
         <p>
-          Call or text us at <strong>(470) 272-0054</strong> or send a message
+          Call or text us at <strong>470-272-0054</strong> or send a message
           below:
         </p>
 
@@ -162,7 +169,7 @@
       </div>
 
       <!-- Services: Smart Home & Multimedia -->
-      <div class="service-row">
+      <div class="service-row" id="services">
         <div class="service-card">
           <h3>🏠 Smart Home & Multimedia</h3>
           <hr

@@ -1,6 +1,6 @@
 /* 1. GLOBAL VARIABLES & RESET */
 :root {
-  --primary: #004a99;
+  --primary: #006b24;
   --accent: #e67e22;
   --light: #f4f7f6;
   --dark: #333;
@@ -34,8 +34,7 @@ a:hover {
   transform: scale(1.07); /* Makes the logo grow */
 }
 
-/* 2. NAVIGATION & HEADER */
-/* --- Mobile View (Default) --- */
+/* --- Mobile Nav Bar (Default) --- */
 .main-nav {
   position: fixed;
   top: 0;
@@ -55,6 +54,9 @@ a:hover {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .nav-hamburger span {
@@ -65,16 +67,38 @@ a:hover {
 }
 
 .nav-links {
-  display: none; /* Hide standard links on mobile */
+  display: none;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+  box-sizing: border-box;
+  max-height: 0; /* Initially hide links */
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+  width: 90%;
 }
 
-nav {
-  background: var(--dark);
-  padding: 15px 30px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  border-bottom: 1px solid #444;
+.nav-links.active {
+  display: flex !important;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 75%;
+  background: rgba(51, 51, 51, 0.98);
+  z-index: 1001;
+  padding: 10px 20px;
+  margin-top: 0;
+  border: 2px solid var(--primary);
+  border-bottom-right-radius: 8px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  max-height: 500px; /* show all links when active */
+}
+
+.nav-links li {
+  margin: 10px 0; /* Adds vertical space between taps */
 }
 
 .logo {
@@ -243,7 +267,7 @@ footer {
   font-weight: bold;
 }
 
-/* 7. RESPONSIVE DESIGN */
+/* Smart Phone (Top Nav Bar) */
 @media (max-width: 768px) {
   .service-row,
   .service-row:nth-child(even) {

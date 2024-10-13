@@ -42,19 +42,5 @@ document.addEventListener("DOMContentLoaded", function () {
 /* 3. MOBILE MENU TOGGLE */
 function toggleMenu() {
   const navLinks = document.getElementById("navLinks");
-  if (navLinks) {
-    if (navLinks.style.display === "flex") {
-      navLinks.style.display = "none";
-    } else {
-      navLinks.style.display = "flex";
-      // Apply mobile-specific menu styles dynamically
-      navLinks.style.flexDirection = "column";
-      navLinks.style.position = "absolute";
-      navLinks.style.top = "60px";
-      navLinks.style.left = "0";
-      navLinks.style.width = "100%";
-      navLinks.style.background = "#333";
-      navLinks.style.zIndex = "1001";
-    }
-  }
+  navLinks.classList.toggle("active");
 }
