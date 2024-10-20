@@ -1,0 +1,2 @@
+When SHOULD you use target="_blank"?
+It is best practice to use it only for External Links (links that take people away from gokame.com).

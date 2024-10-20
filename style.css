@@ -1,0 +1,228 @@
+/* 1. GLOBAL VARIABLES & RESET */
+:root {
+  --primary: #004a99;
+  --accent: #e67e22;
+  --light: #f4f7f6;
+  --dark: #333;
+  --legal-green: lightgreen;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark);
+}
+
+a {
+  color: var(--light);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  /* text-decoration: underline;
+  color: var(--light); */
+  text-decoration: none; /* Keeps the logo clean without an underline */
+  color: #fff; /* brightens the text during the glow */
+  text-shadow: 0 0 10px rgba(0, 74, 153, 0.8), 0 0 20px rgba(0, 74, 153, 0.4);
+  transform: scale(1.07); /* Makes the logo grow */
+}
+
+/* 2. NAVIGATION & HEADER */
+nav {
+  background: var(--dark);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.logo a {
+  transition: all 0.3s ease; /* Makes the glow fade in smoothly */
+  display: inline-block;
+}
+
+.logo a:hover {
+  text-decoration: none; /* Keeps the logo clean without an underline */
+  color: #fff; /* brightens the text during the glow */
+  text-shadow: 0 0 10px rgba(0, 74, 153, 0.8), 0 0 20px rgba(0, 74, 153, 0.4);
+  transform: scale(1.07); /* Makes the logo grow */
+}
+
+header {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  background: linear-gradient(rgba(0, 45, 94, 0.7), rgba(0, 45, 94, 0.7)),
+    url("/assets/MoHeader.jpg") left center / cover no-repeat;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tagline {
+  font-size: 1.4rem;
+  font-weight: 300;
+  margin: 10px 0 20px;
+  color: #d1e3ff;
+}
+
+/* 3. LAYOUT & CONTAINERS */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.mission {
+  background: var(--light);
+  padding: 30px;
+  border-radius: 12px;
+  margin: -60px auto 40px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--accent);
+}
+
+/* 4. SERVICES (ALTERNATING LAYOUT) */
+.service-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0;
+  margin-bottom: 40px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-row:nth-child(even) {
+  direction: rtl;
+}
+
+.service-row:nth-child(even) .service-card {
+  direction: ltr;
+}
+
+.service-card {
+  padding: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-card h3 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 5. COMPONENTS (BUTTONS, CONTACT) */
+.contact-box {
+  text-align: center;
+  padding: 50px 20px;
+  background: #002d5e;
+  color: white;
+  border-radius: 10px;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.area-tag {
+  background: #222;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: 0.85rem;
+  color: var(--light);
+  background-color: var(--primary);
+}
+
+/* 6. LEGAL PAGES STYLING (The "Matrix" Theme) */
+.legal-body {
+  background-color: black;
+  color: white;
+  max-width: 800px;
+  margin: auto;
+  padding: 40px;
+}
+
+.legal-body h1,
+.legal-body h3,
+.legal-body a {
+  color: var(--legal-green);
+}
+
+.legal-body h1 {
+  border-bottom: 2px solid #333;
+}
+
+.footer-link-legal {
+  margin-top: 40px;
+  display: block;
+  font-weight: bold;
+}
+
+/* 7. RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .service-row,
+  .service-row:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  .service-image {
+    min-height: 250px;
+    order: 1;
+  }
+  .service-card {
+    order: 2;
+  }
+}
