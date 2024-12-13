@@ -15,61 +15,36 @@
     />
     <link rel="stylesheet" href="style.css" />
     <!-- Scripts -->
-    <script>
-      // Set current year in footer
-      document.addEventListener("DOMContentLoaded", function () {
-        const yearSpan = document.getElementById("displayDateYear");
-        const currentYear = new Date().getFullYear();
-        yearSpan.textContent = currentYear;
-      });
-    </script>
     <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
-    <script type="text/javascript">
-      (function () {
-        // Initialize with your Public Key
-        emailjs.init({
-          publicKey: "WuOhmac_rF3BPJy-3",
-        });
-      })();
-
-      window.onload = function () {
-        document
-          .getElementById("contact-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            // Show user that it's sending
-            const btn = this.querySelector("button");
-            btn.innerText = "Sending...";
-
-            // REPLACE 'your_service_id' and 'your_template_id' with your actual IDs from EmailJS
-            emailjs.sendForm("service_qzqzp2b", "template_8kporjp", this).then(
-              () => {
-                alert("Message Sent Successfully!");
-                btn.innerText = "Send Message";
-                this.reset(); // Clears the form
-              },
-              (error) => {
-                alert("FAILED to send message. Please try again.");
-                console.log("FAILED...", error);
-                btn.innerText = "Send Message";
-              }
-            );
-          });
-      };
-    </script>
+    <script src="script.js" defer></script>
   </head>
 
   <!-- end of head and start of body -->
 
   <body>
-    <nav>
+    <nav class="main-nav">
+      <div class="nav-hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
       <div class="logo">
         <a href="index.html">GOKAME</a>
       </div>
+
+      <div class="nav-call">
+        <a href="tel:4702720054">📞</a>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="pages/privacy-policy.html">Privacy</a></li>
+      </ul>
     </nav>
     <header>
       <h1>GOKAME Tech Support</h1>

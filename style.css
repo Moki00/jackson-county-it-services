@@ -17,6 +17,7 @@ body {
   color: var(--dark);
   margin: 0;
   padding: 0;
+  padding-top: 60px;
   background-color: var(--dark);
 }
 
@@ -27,8 +28,6 @@ a {
 }
 
 a:hover {
-  /* text-decoration: underline;
-  color: var(--light); */
   text-decoration: none; /* Keeps the logo clean without an underline */
   color: #fff; /* brightens the text during the glow */
   text-shadow: 0 0 10px rgba(0, 74, 153, 0.8), 0 0 20px rgba(0, 74, 153, 0.4);
@@ -36,6 +35,39 @@ a:hover {
 }
 
 /* 2. NAVIGATION & HEADER */
+/* --- Mobile View (Default) --- */
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.nav-hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.nav-hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--light);
+  border-radius: 2px;
+}
+
+.nav-links {
+  display: none; /* Hide standard links on mobile */
+}
+
 nav {
   background: var(--dark);
   padding: 15px 30px;
@@ -224,5 +256,55 @@ footer {
   }
   .service-card {
     order: 2;
+  }
+}
+
+/* --- Desktop View (Side Bar) --- */
+@media (min-width: 1024px) {
+  body {
+    padding-top: 0;
+    padding-left: 200px; /* Space for the sidebar */
+  }
+
+  .main-nav {
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 40px;
+    border-right: 1px solid #444;
+  }
+
+  header {
+    height: 90vh;
+    min-height: auto;
+  }
+
+  .container {
+    max-width: 800px;
+  }
+
+  /* Hide mobile icons on desktop */
+  .nav-hamburger,
+  .nav-call {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 15px 20px;
+    text-align: center;
+    border-bottom: 1px solid #444;
   }
 }
