@@ -1,39 +1,67 @@
-<script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-></script>
+<form
+  id="contact-form"
+  style="max-width: 500px; margin: 30px auto; text-align: left"
+>
+  <div style="margin-bottom: 15px">
+    <label for="user-name" style="display: block; margin-bottom: 5px"
+      >Your Name</label
+    >
+    <input
+      type="text"
+      id="user-name"
+      name="from_name"
+      required
+      style="width: 100%; padding: 10px; border-radius: 5px; border: none"
+    />
+  </div>
 
-<script type="text/javascript">
-  (function () {
-    // Initialize with your Public Key
-    emailjs.init({
-      publicKey: "YOUR_PUBLIC_KEY",
-    });
-  })();
+  <div style="margin-bottom: 15px">
+    <label for="user-email" style="display: block; margin-bottom: 5px"
+      >Email Address</label
+    >
+    <input
+      type="email"
+      id="user-email"
+      name="reply_to"
+      required
+      style="width: 100%; padding: 10px; border-radius: 5px; border: none"
+    />
+  </div>
 
-  window.onload = function () {
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
+  <div style="margin-bottom: 15px">
+    <label for="service" style="display: block; margin-bottom: 5px"
+      >Service Needed</label
+    >
+    <select
+      name="service_type"
+      id="service"
+      style="width: 100%; padding: 10px; border-radius: 5px; border: none"
+    >
+      <option value="Smart Home">Smart Home / Multimedia</option>
+      <option value="Web Design">Web Building / Editing</option>
+      <option value="IT Repair">Computer / IT Repair</option>
+      <option value="Commercial">Commercial Services</option>
+    </select>
+  </div>
 
-        // Show user that it's sending
-        const btn = this.querySelector("button");
-        btn.innerText = "Sending...";
+  <div style="margin-bottom: 20px">
+    <label for="message" style="display: block; margin-bottom: 5px"
+      >How can we help?</label
+    >
+    <textarea
+      name="message"
+      id="message"
+      rows="4"
+      required
+      style="width: 100%; padding: 10px; border-radius: 5px; border: none"
+    ></textarea>
+  </div>
 
-        // REPLACE 'your_service_id' and 'your_template_id' with your actual IDs from EmailJS
-        emailjs.sendForm("your_service_id", "your_template_id", this).then(
-          () => {
-            alert("Message Sent Successfully!");
-            btn.innerText = "Send Message";
-            this.reset(); // Clears the form
-          },
-          (error) => {
-            alert("FAILED to send message. Please try again.");
-            console.log("FAILED...", error);
-            btn.innerText = "Send Message";
-          }
-        );
-      });
-  };
-</script>
+  <button
+    type="submit"
+    class="btn"
+    style="width: 100%; border: none; cursor: pointer"
+  >
+    Send Message
+  </button>
+</form>

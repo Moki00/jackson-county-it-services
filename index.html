@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GOKAME | Tech & Web Solutions North Georgia</title>
+    <meta
+      name="description"
+      content="GOKAME Tech Support: Expert onsite computer repair, smart home integration, and website services in North Georgia. Simplifying your tech needs."
+    />
+
+    <!-- css style -->
     <style>
       :root {
         --primary: #004a99;
@@ -47,7 +53,7 @@
         color: white;
         /* Image Setup */
         background: linear-gradient(rgba(0, 45, 94, 0.7), rgba(0, 45, 94, 0.7)),
-          url("gokameMoHeader.jpg");
+          url("/resources/MoHeader.jpg");
         background-size: cover;
         background-position: left center;
         background-repeat: no-repeat;
@@ -129,22 +135,21 @@
         background-position: center;
       }
 
-      /* Mobile Responsiveness */
+      /* Mobile Screens*/
       @media (max-width: 768px) {
         .service-row,
         .service-row:nth-child(even) {
-          grid-template-columns: 1fr; /* Stacks vertically on smaller screens */
-          direction: ltr; /* Resets the layout direction for mobile */
+          grid-template-columns: 1fr; /* Stacks vertically */
+          direction: ltr; /* Resets the layout direction */
         }
         .service-image {
           min-height: 250px;
-          order: 1; /* Puts image on top for mobile if desired */
+          order: 1; /* Puts image on top */
         }
         .service-card {
           order: 2;
         }
       }
-
       .card {
         border: 1px solid #eee;
         padding: 25px;
@@ -199,6 +204,8 @@
         background-color: var(--primary);
       }
     </style>
+
+    <!-- Scripts -->
     <script>
       // Set current year in footer
       document.addEventListener("DOMContentLoaded", function () {
@@ -215,7 +222,7 @@
       (function () {
         // Initialize with your Public Key
         emailjs.init({
-          publicKey: "YOUR_PUBLIC_KEY",
+          publicKey: "WuOhmac_rF3BPJy-3",
         });
       })();
 
@@ -230,7 +237,7 @@
             btn.innerText = "Sending...";
 
             // REPLACE 'your_service_id' and 'your_template_id' with your actual IDs from EmailJS
-            emailjs.sendForm("service_qzqzp2b", "your_template_id", this).then(
+            emailjs.sendForm("service_qzqzp2b", "template_8kporjp", this).then(
               () => {
                 alert("Message Sent Successfully!");
                 btn.innerText = "Send Message";
@@ -246,6 +253,9 @@
       };
     </script>
   </head>
+
+  <!-- end of head and start of body -->
+
   <body>
     <nav>
       <div class="logo">GOKAME Tech Support</div>
@@ -277,8 +287,7 @@
         </p>
 
         <form
-          action="https://formspree.io/f/YOUR_UNIQUE_ID"
-          method="POST"
+          id="contact-form"
           style="max-width: 500px; margin: 30px auto; text-align: left"
         >
           <div style="margin-bottom: 15px">
@@ -322,8 +331,8 @@
               >Service Needed</label
             >
             <select
-              name="service"
               id="service"
+              name="service"
               style="
                 width: 100%;
                 padding: 10px;
@@ -332,7 +341,7 @@
               "
             >
               <option value="smart-home">Smart Home / Multimedia</option>
-              <option value="web">Web Building / Editing</option>
+              <option value="web">Website Building / Editing</option>
               <option value="repair">Computer / IT Repair</option>
               <option value="commercial">Commercial Services</option>
             </select>
