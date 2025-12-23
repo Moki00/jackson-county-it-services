@@ -83,6 +83,68 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 25px;
       }
+      /* <!-- Service Row Container --> */
+      .service-row {
+        display: grid;
+        grid-template-columns: 1fr 2fr; /* 1/3 for text card, 2/3 for image */
+        gap: 0;
+        margin-bottom: 40px;
+        background-color: #1a1a1a; /* Matches the dark theme in your image */
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      /* This flips the order of the card and image for every second row */
+      .service-row:nth-child(even) {
+        direction: rtl; /* Sets the layout direction to Right-to-Left */
+      }
+
+      /* This ensures the text inside the card stays reading Left-to-Right */
+      .service-row:nth-child(even) .service-card {
+        direction: ltr;
+      }
+
+      /* <!-- 1/3 Service Card Styling --> */
+      .service-card {
+        padding: 40px;
+        background: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .service-card h3 {
+        color: #004a99; /* Primary Blue */
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      /* 2/3 Image Section Styling */
+      .service-image {
+        width: 100%;
+        height: 100%;
+        min-height: 400px; /* Ensures the image has a good presence */
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .service-row,
+        .service-row:nth-child(even) {
+          grid-template-columns: 1fr; /* Stacks vertically on smaller screens */
+          direction: ltr; /* Resets the layout direction for mobile */
+        }
+        .service-image {
+          min-height: 250px;
+          order: 1; /* Puts image on top for mobile if desired */
+        }
+        .service-card {
+          order: 2;
+        }
+      }
+
       .card {
         border: 1px solid #eee;
         padding: 25px;
@@ -256,37 +318,82 @@
         </form>
       </div>
 
-      <div class="services-grid">
-        <div class="card">
+      <!-- Services -->
+      <div class="service-row">
+        <div class="service-card">
           <h3>🏠 Smart Home & Multimedia</h3>
+          <hr
+            style="
+              border: none;
+              height: 1px;
+              background: #eee;
+              margin-bottom: 20px;
+            "
+          />
           <p>
             Expert setup for home theaters, smart doorbells, security cameras,
             and Wi-Fi optimization. We turn your house into a fully automated
             home.
           </p>
         </div>
-        <div class="card">
-          <h3>🌐 Web Building & Editing</h3>
+        <div
+          class="service-image"
+          style="background-image: url('tvWall.jpg')"
+        ></div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-card">
+          <h3>🌐 Website Building & Editing</h3>
+          <hr
+            style="
+              border: none;
+              height: 1px;
+              background: #eee;
+              margin-bottom: 20px;
+            "
+          />
           <p>
-            Need a professional website or an update to your current one? We
-            build fast, mobile-friendly sites and provide ongoing editing
-            services to keep your business current.
+            <strong
+              >Professional web presence for North Georgia small
+              businesses.</strong
+            >
+            We build fast, mobile-friendly sites that rank in local searches
+            like this one near <em>Buford</em>. Whether you need a brand-new
+            launch or reliable monthly editing, we keep your business current.
           </p>
         </div>
-        <div class="card">
+        <div
+          class="service-image"
+          style="background-image: url('turtlePc.jpg')"
+        ></div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-card">
           <h3>💻 Computer & IT Repair</h3>
           <p>
             Virus removal, hardware upgrades, and performance tuning for PC/Mac.
             On-site support for homes and small businesses in North GA.
           </p>
         </div>
-        <div class="card">
+        <div
+          class="service-image"
+          style="background-image: url('turtlePc.jpg')"
+        ></div>
+      </div>
+      <div class="service-row">
+        <div class="service-card">
           <h3>🏢 Commercial Services</h3>
           <p>
             Reliable networking, POS system maintenance, and cloud backup
             solutions designed to keep your business running without downtime.
           </p>
         </div>
+        <div
+          class="service-image"
+          style="background-image: url('tvWall.jpg')"
+        ></div>
       </div>
 
       <div class="area-tag">

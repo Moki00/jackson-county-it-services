@@ -1,0 +1,5 @@
+File Weight: Aim for under 250 KB per image (ideally under 100 KB for non-hero images).
+
+Dimensions: Since your layout uses a 2/3 width for the picture, a width of 1200 pixels is perfect. This provides plenty of detail on desktop while remaining manageable for phones.
+
+Resolution: Always use 72 PPI (pixels per inch). Higher values like 300 PPI are for printing and only add "invisible weight" to web files.
