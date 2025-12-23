@@ -20,7 +20,7 @@
         color: var(--dark);
         margin: 0;
         padding: 0;
-        background-color: #fff;
+        background-color: var(--dark);
       }
       nav {
         background: #fff;
@@ -195,9 +195,56 @@
         text-align: center;
         padding: 30px;
         font-size: 0.85rem;
-        color: #888;
+        color: var(--light);
+        background-color: var(--primary);
       }
     </style>
+    <script>
+      // Set current year in footer
+      document.addEventListener("DOMContentLoaded", function () {
+        const yearSpan = document.getElementById("displayDateYear");
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = currentYear;
+      });
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // Initialize with your Public Key
+        emailjs.init({
+          publicKey: "YOUR_PUBLIC_KEY",
+        });
+      })();
+
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Show user that it's sending
+            const btn = this.querySelector("button");
+            btn.innerText = "Sending...";
+
+            // REPLACE 'your_service_id' and 'your_template_id' with your actual IDs from EmailJS
+            emailjs.sendForm("service_qzqzp2b", "your_template_id", this).then(
+              () => {
+                alert("Message Sent Successfully!");
+                btn.innerText = "Send Message";
+                this.reset(); // Clears the form
+              },
+              (error) => {
+                alert("FAILED to send message. Please try again.");
+                console.log("FAILED...", error);
+                btn.innerText = "Send Message";
+              }
+            );
+          });
+      };
+    </script>
   </head>
   <body>
     <nav>
@@ -318,7 +365,7 @@
         </form>
       </div>
 
-      <!-- Services -->
+      <!-- Services: Smart Home & Multimedia -->
       <div class="service-row">
         <div class="service-card">
           <h3>🏠 Smart Home & Multimedia</h3>
@@ -338,10 +385,11 @@
         </div>
         <div
           class="service-image"
-          style="background-image: url('tvWall.jpg')"
+          style="background-image: url(/resources/tvWall.jpg)"
         ></div>
       </div>
 
+      <!-- Services: Website -->
       <div class="service-row">
         <div class="service-card">
           <h3>🌐 Website Building & Editing</h3>
@@ -365,7 +413,7 @@
         </div>
         <div
           class="service-image"
-          style="background-image: url('turtlePc.jpg')"
+          style="background-image: url(/resources/website.jpg)"
         ></div>
       </div>
 
@@ -379,7 +427,7 @@
         </div>
         <div
           class="service-image"
-          style="background-image: url('turtlePc.jpg')"
+          style="background-image: url(/resources/turtlePc.jpg)"
         ></div>
       </div>
       <div class="service-row">
@@ -392,7 +440,10 @@
         </div>
         <div
           class="service-image"
-          style="background-image: url('tvWall.jpg')"
+          style="
+            background-image: url(/resources/dataCenter.jpg);
+            background-position: top;
+          "
         ></div>
       </div>
 
@@ -437,12 +488,14 @@
 
     <footer>
       <p>
-        &copy; 2025<span id="displayDateYear"></span> Gokame Tech Support. All
+        &copy; <span id="displayDateYear"></span> Gokame Tech Support. All
         rights reserved.
         <br />
         <a href="https://gokame.com/">Gokame.com</a>
         Your Local Tech Partner.
       </p>
+      <a href="https://gokame.com/privacy-policy.html">Privacy Policy</a> |
+      <a href="https://gokame.com/terms-of-service.html">Terms of Service</a>
     </footer>
   </body>
 </html>

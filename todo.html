@@ -1,15 +1,39 @@
-<div class="service-card">
-  <h3>🌐 Web Building & Editing</h3>
-  <hr
-    style="border: none; height: 1px; background: #eee; margin-bottom: 20px"
-  />
-  <p>
-    <strong
-      >Professional web presence for North Georgia small businesses.</strong
-    >
-    We build fast, mobile-friendly sites that rank in local searches from
-    <em>Jefferson</em> to <em>Braselton</em> and <em>Buford</em>. Whether you
-    need a brand-new launch or reliable monthly editing, we keep your business
-    current.
-  </p>
-</div>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+></script>
+
+<script type="text/javascript">
+  (function () {
+    // Initialize with your Public Key
+    emailjs.init({
+      publicKey: "YOUR_PUBLIC_KEY",
+    });
+  })();
+
+  window.onload = function () {
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        // Show user that it's sending
+        const btn = this.querySelector("button");
+        btn.innerText = "Sending...";
+
+        // REPLACE 'your_service_id' and 'your_template_id' with your actual IDs from EmailJS
+        emailjs.sendForm("your_service_id", "your_template_id", this).then(
+          () => {
+            alert("Message Sent Successfully!");
+            btn.innerText = "Send Message";
+            this.reset(); // Clears the form
+          },
+          (error) => {
+            alert("FAILED to send message. Please try again.");
+            console.log("FAILED...", error);
+            btn.innerText = "Send Message";
+          }
+        );
+      });
+  };
+</script>
