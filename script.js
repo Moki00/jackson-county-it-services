@@ -5,7 +5,7 @@
     console.warn("EmailJS not functional on this page.");
     return;
   }
-  console.log("Initializing EmailJS...");
+  console.log("Initializing EmailJS");
   emailjs.init({
     publicKey: "WuOhmac_rF3BPJy-3",
   });
@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set current year in footer
   const yearSpan = document.getElementById("displayDateYear");
   if (yearSpan) {
-    console.log("Setting current year in footer...");
     yearSpan.textContent = new Date().getFullYear();
   }
 
@@ -27,32 +26,54 @@ document.addEventListener("DOMContentLoaded", function () {
       event.preventDefault();
 
       const btn = this.querySelector("button");
-      btn.innerText = "Sending...";
+      btn.innerText = "Verifying...";
 
-      // Get the selected service text
-      const serviceSelect = document.getElementById("service");
-      let serviceLabel =
-        serviceSelect.options[serviceSelect.selectedIndex].text;
-      serviceLabel = serviceLabel.trim().replace("/", "or").replace("&", "and");
+      //reCAPTCHA v3 Execution
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("6Ld_nzcsAAAAAPeopYqohgsinz7pR_hIej7qcE-R", {
+            action: "submit",
+          })
+          .then(function (token) {
+            console.log("reCAPTCHA Token generated:", token);
 
-      // Prepare the template parameters
-      const templateParams = {
-        name: document.getElementById("user-name").value,
-        email: document.getElementById("user-email").value,
-        service: serviceLabel, // Send the clean text
-        message: document.getElementById("message").value,
-      };
+            // EmailJS logic
+            btn.innerText = "Sending...";
 
-      // Send via EmailJS
-      emailjs.send("service_qzqzp2b", "template_8kporjp", templateParams).then(
-        () => {
-          window.location.href = "pages/thank-you.html";
-        },
-        (error) => {
-          alert("Something went wrong. Please call us at 470-272-0054.");
-          btn.innerText = "Call 470-272-0054";
-        }
-      );
+            // Get the selected service as text
+            const serviceSelect = document.getElementById("service");
+            let serviceLabel =
+              serviceSelect.options[serviceSelect.selectedIndex].text;
+            serviceLabel = serviceLabel
+              .trim()
+              .replace("/", "or")
+              .replace("&", "and");
+
+            // Prepare the template parameters
+            const templateParams = {
+              name: document.getElementById("user-name").value,
+              email: document.getElementById("user-email").value,
+              service: serviceLabel,
+              message: document.getElementById("message").value,
+              "g-recaptcha-response": token, // Pass the token to EmailJS if template needs it
+            };
+
+            // Send via EmailJS
+            emailjs
+              .send("service_qzqzp2b", "template_8kporjp", templateParams)
+              .then(
+                () => {
+                  window.location.href = "pages/thank-you.html";
+                },
+                (error) => {
+                  alert(
+                    "Something went wrong. Please call us at 470-272-0054."
+                  );
+                  btn.innerText = "Call 470-272-0054";
+                }
+              );
+          });
+      });
     });
   }
 });

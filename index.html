@@ -5,6 +5,7 @@
       name="impact-site-verification"
       value="ff733189-1aa1-42fd-bf6b-9c4a4081dbc9"
     />
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld_nzcsAAAAAPeopYqohgsinz7pR_hIej7qcE-R"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GOKAME Tech</title>
@@ -120,8 +121,17 @@
             <label for="message">How can we help?</label>
             <textarea name="message" id="message" rows="4"></textarea>
           </div>
+          <div
+            class="g-recaptcha"
+            data-sitekey="6LfNnjcsAAAAAJhMHBpkw55ysFR3ZNSflUp1M2v1"
+            style="margin-bottom: 20px"
+          ></div>
 
-          <button type="submit" class="btn">Send Message</button>
+          <div class="button-container">
+            <button type="submit" id="submit-btn" class="btn">
+              Send Message
+            </button>
+          </div>
         </form>
       </div>
 
