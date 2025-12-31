@@ -175,6 +175,41 @@ header h1 {
   border-top: 5px solid var(--accent);
 }
 
+/* --- Base referral Card --- */
+.referral-card {
+  margin: 0px auto 30px;
+  position: relative;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--accent);
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #444;
+  color: var(--light);
+  width: 100%;
+  max-width: 700px;
+}
+
+/* --- Incoming Testimonials (Blue) --- */
+.referral-card.incoming {
+  border-left: 8px solid #3498db; /* Professional Blue */
+  background: rgba(52, 152, 219, 0.1); /* Subtle blue tint */
+}
+.referral-card.incoming h3 {
+  color: #3498db;
+}
+
+/* --- Outgoing Referrals (Green) --- */
+.referral-card.outgoing {
+  border-left: 8px solid var(--legal-green); /* Using your GOKAME Green */
+  background: rgba(0, 255, 65, 0.05); /* Subtle green tint */
+}
+.referral-card.outgoing h3 {
+  color: var(--legal-green);
+}
+
 /* Contact Section */
 #contact-form {
   max-width: 500px;
